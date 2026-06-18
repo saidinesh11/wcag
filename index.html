@@ -11,8 +11,9 @@
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a href="#" class="logo">Sai Dinesh</a>
+      <a href="https://saidinesh11.github.io/UIUX/" class="logo">Sai Dinesh</a>
       <div class="nav-links">
+        <a href="https://saidinesh11.github.io/UIUX/">Portfolio</a>
         <a href="#overview">Overview</a>
         <a href="#process">Process</a>
         <a href="#findings">Findings</a>
@@ -23,15 +24,22 @@
 
   <main id="main">
     <section class="hero">
-      <p class="eyebrow">UX Accessibility Audit</p>
-      <h1>MakeMyTrip Accessibility Audit</h1>
-      <p class="hero-text">
-        A WCAG 2.2 AA accessibility review of the MakeMyTrip flight booking experience, focused on inclusive design, keyboard usability, screen reader support, visual accessibility, and form usability.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#findings">View Findings</a>
-        <a class="btn secondary" href="#process">Audit Process</a>
+      <div class="hero-copy">
+        <p class="eyebrow">UX Accessibility Audit</p>
+        <h1>MakeMyTrip Accessibility Audit</h1>
+        <p class="hero-text">
+          A WCAG 2.2 AA accessibility review of the MakeMyTrip flight booking experience, focused on inclusive design, keyboard usability, screen reader support, visual accessibility, and form usability.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#findings">View Findings</a>
+          <a class="btn secondary" href="#process">Audit Process</a>
+        </div>
       </div>
+
+      <figure class="hero-image-card">
+        <img src="images/makemytrip-home-audit.png" alt="MakeMyTrip flight booking homepage audited for accessibility" />
+        <figcaption>Homepage reviewed during the accessibility audit</figcaption>
+      </figure>
     </section>
 
     <section id="overview" class="section">
@@ -100,6 +108,7 @@
         <h3>Tools Used</h3>
         <div class="tags">
           <span>NVDA</span>
+          <span>ANDI</span>
           <span>Axe DevTools</span>
           <span>WAVE</span>
           <span>Lighthouse</span>
@@ -112,99 +121,137 @@
     <section id="findings" class="section">
       <div class="section-header">
         <p class="eyebrow">Key Findings</p>
-        <h2>Accessibility issues identified from a UX design perspective</h2>
+        <h2>Accessibility findings with image evidence</h2>
       </div>
 
-      <div class="findings-grid">
+      <div class="finding-list">
 
-        <article class="finding-card high">
-          <div class="finding-top">
-            <span class="severity">High</span>
-            <span class="wcag">WCAG 1.1.1 / 4.1.2</span>
+        <article class="finding-detail high">
+          <div class="finding-image">
+            <img src="images/finding-01-overview.png" alt="Accessibility inspector showing social media icon link missing accessible name" />
           </div>
-          <h3>Social media icons lack accessible names</h3>
-          <p><strong>UX Impact:</strong> Screen reader users may hear only “link” without understanding where the icon leads.</p>
-          <p><strong>Recommendation:</strong> Add meaningful labels such as “Follow us on Facebook” or “Follow us on Instagram.”</p>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">High</span>
+              <span class="wcag">WCAG 1.1.1 / 4.1.2</span>
+            </div>
+            <h3>01. Social media icons lack accessible names</h3>
+            <p><strong>UX Observation:</strong> Social media icons rely only on visual recognition and do not provide a meaningful accessible name.</p>
+            <p><strong>User Impact:</strong> Screen reader users may hear only “link” and cannot understand the destination or purpose.</p>
+            <p><strong>Recommendation:</strong> Add descriptive labels such as “Follow us on Facebook” or “Follow us on Instagram.”</p>
+          </div>
         </article>
 
-        <article class="finding-card high">
-          <div class="finding-top">
-            <span class="severity">High</span>
-            <span class="wcag">WCAG 1.4.3</span>
+        <article class="finding-detail high">
+          <div class="finding-image">
+            <img src="images/finding-02-overview.png" alt="ANDI color contrast audit showing 2.78 to 1 contrast ratio failure" />
           </div>
-          <h3>Helper text has low contrast</h3>
-          <p><strong>UX Impact:</strong> Users with low vision may struggle to read important booking guidance.</p>
-          <p><strong>Recommendation:</strong> Increase color contrast to at least 4.5:1 for normal text.</p>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">High</span>
+              <span class="wcag">WCAG 1.4.3</span>
+            </div>
+            <h3>02. Helper text has insufficient contrast</h3>
+            <p><strong>UX Observation:</strong> Helper text for return date discounts appears in light gray on a white background.</p>
+            <p><strong>User Impact:</strong> Users with low vision may struggle to read important booking guidance.</p>
+            <p><strong>Recommendation:</strong> Increase contrast to at least 4.5:1 for normal text and define accessible color tokens.</p>
+          </div>
         </article>
 
-        <article class="finding-card medium">
-          <div class="finding-top">
-            <span class="severity">Medium</span>
-            <span class="wcag">WCAG 1.4.10</span>
+        <article class="finding-detail medium">
+          <div class="finding-image">
+            <img src="images/finding-03-overview.png" alt="MakeMyTrip page at zoom level showing horizontal scrollbar and reflow issue" />
           </div>
-          <h3>Flight form does not reflow properly</h3>
-          <p><strong>UX Impact:</strong> Users who zoom the page may need horizontal scrolling to complete booking fields.</p>
-          <p><strong>Recommendation:</strong> Use responsive layouts that stack form fields vertically at smaller widths.</p>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">Medium</span>
+              <span class="wcag">WCAG 1.4.10</span>
+            </div>
+            <h3>03. Flight form does not reflow properly</h3>
+            <p><strong>UX Observation:</strong> At higher zoom levels, the booking form requires horizontal scrolling.</p>
+            <p><strong>User Impact:</strong> Low-vision users who zoom the page must scroll horizontally to access form controls.</p>
+            <p><strong>Recommendation:</strong> Use responsive layouts that stack booking fields vertically at smaller viewport widths.</p>
+          </div>
         </article>
 
-        <article class="finding-card high">
-          <div class="finding-top">
-            <span class="severity">High</span>
-            <span class="wcag">WCAG 2.1.1</span>
+        <article class="finding-detail high">
+          <div class="finding-image">
+            <img src="images/finding-04-overview.png" alt="Search button highlighted during keyboard accessibility review" />
           </div>
-          <h3>Some controls are not keyboard accessible</h3>
-          <p><strong>UX Impact:</strong> Keyboard-only users may be unable to complete important actions like search or dropdown selection.</p>
-          <p><strong>Recommendation:</strong> Ensure all interactive elements support Tab, Enter, Space, and Arrow key behavior.</p>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">High</span>
+              <span class="wcag">WCAG 2.1.1</span>
+            </div>
+            <h3>04. Some controls are not fully keyboard accessible</h3>
+            <p><strong>UX Observation:</strong> Key interactive elements such as buttons and booking controls need complete keyboard support.</p>
+            <p><strong>User Impact:</strong> Keyboard-only users may not be able to complete search or booking actions efficiently.</p>
+            <p><strong>Recommendation:</strong> Ensure controls support Tab, Enter, Space, and Arrow key interactions using predictable patterns.</p>
+          </div>
         </article>
 
-        <article class="finding-card high">
-          <div class="finding-top">
-            <span class="severity">High</span>
-            <span class="wcag">WCAG 2.1.2</span>
+        <article class="finding-detail medium">
+          <div class="finding-image">
+            <img src="images/finding-06-overview.png" alt="Top of MakeMyTrip page showing repeated navigation area with no skip link" />
           </div>
-          <h3>Destination dropdown creates keyboard trap</h3>
-          <p><strong>UX Impact:</strong> Users may become stuck inside the dropdown and unable to return to previous fields.</p>
-          <p><strong>Recommendation:</strong> Allow Shift + Tab navigation and provide an ESC key exit behavior.</p>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">Medium</span>
+              <span class="wcag">WCAG 2.4.1</span>
+            </div>
+            <h3>05. No skip link for repeated navigation</h3>
+            <p><strong>UX Observation:</strong> The page does not provide a visible-on-focus skip link to bypass repeated header content.</p>
+            <p><strong>User Impact:</strong> Keyboard and screen reader users must repeatedly tab through navigation before reaching main content.</p>
+            <p><strong>Recommendation:</strong> Add a “Skip to main content” link that appears when focused.</p>
+          </div>
         </article>
 
-        <article class="finding-card medium">
-          <div class="finding-top">
-            <span class="severity">Medium</span>
-            <span class="wcag">WCAG 2.4.1</span>
+        <article class="finding-detail high">
+          <div class="finding-image">
+            <img src="images/finding-07-overview.png" alt="Flights and Hotels tabs highlighted showing focus visibility concern" />
           </div>
-          <h3>No skip link for repeated navigation</h3>
-          <p><strong>UX Impact:</strong> Keyboard and screen reader users must repeatedly tab through header content.</p>
-          <p><strong>Recommendation:</strong> Add a visible-on-focus “Skip to main content” link.</p>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">High</span>
+              <span class="wcag">WCAG 2.4.7</span>
+            </div>
+            <h3>06. Focus states are difficult to identify</h3>
+            <p><strong>UX Observation:</strong> Interactive tabs and controls do not consistently show a strong visible focus indicator.</p>
+            <p><strong>User Impact:</strong> Keyboard users may lose track of their current position on the page.</p>
+            <p><strong>Recommendation:</strong> Use a consistent high-contrast focus ring across all interactive elements.</p>
+          </div>
         </article>
 
-        <article class="finding-card high">
-          <div class="finding-top">
-            <span class="severity">High</span>
-            <span class="wcag">WCAG 2.4.7</span>
+        <article class="finding-detail medium">
+          <div class="finding-image">
+            <img src="images/finding-08-overview.png" alt="Promotional carousel section highlighted without pause or stop controls" />
           </div>
-          <h3>Focus states are not clearly visible</h3>
-          <p><strong>UX Impact:</strong> Users cannot easily identify where they are on the page while navigating.</p>
-          <p><strong>Recommendation:</strong> Use a strong, consistent focus indicator across all interactive elements.</p>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">Medium</span>
+              <span class="wcag">WCAG 2.2.2</span>
+            </div>
+            <h3>07. Auto-rotating carousel lacks user control</h3>
+            <p><strong>UX Observation:</strong> Promotional content rotates without clear pause, stop, previous, or next controls.</p>
+            <p><strong>User Impact:</strong> Users may lose access to information before they finish reading or processing it.</p>
+            <p><strong>Recommendation:</strong> Provide pause/stop controls and manual navigation for moving content.</p>
+          </div>
         </article>
 
-        <article class="finding-card medium">
-          <div class="finding-top">
-            <span class="severity">Medium</span>
-            <span class="wcag">WCAG 2.2.2</span>
+        <article class="finding-detail high">
+          <div class="finding-image">
+            <img src="images/finding-09-overview.png" alt="ANDI forms audit showing labels and form relationships in the flight booking form" />
           </div>
-          <h3>Auto-rotating carousel lacks user control</h3>
-          <p><strong>UX Impact:</strong> Moving content may distract users or disappear before users finish reading.</p>
-          <p><strong>Recommendation:</strong> Add pause, stop, previous, and next controls for carousel content.</p>
-        </article>
-
-        <article class="finding-card high">
-          <div class="finding-top">
-            <span class="severity">High</span>
-            <span class="wcag">WCAG 1.3.1</span>
+          <div class="finding-content">
+            <div class="finding-top">
+              <span class="severity">High</span>
+              <span class="wcag">WCAG 1.3.1</span>
+            </div>
+            <h3>08. Form labels and relationships need clarity</h3>
+            <p><strong>UX Observation:</strong> Form labels and relationships were reviewed to ensure they communicate field purpose clearly.</p>
+            <p><strong>User Impact:</strong> Assistive technology users may struggle to understand what each booking field requires.</p>
+            <p><strong>Recommendation:</strong> Ensure every input has a visible and programmatically associated label.</p>
           </div>
-          <h3>Form labels are not clearly associated</h3>
-          <p><strong>UX Impact:</strong> Assistive technology users may not understand what each booking field requires.</p>
-          <p><strong>Recommendation:</strong> Ensure every field has a visible and programmatically associated label.</p>
         </article>
 
       </div>
