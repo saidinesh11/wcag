@@ -6,14 +6,12 @@
   --bg: #050816;
   --nav: #111827;
   --text: #ffffff;
-  --muted: #d1d5db;
-  --soft: #9ca3af;
+  --muted: #dbeafe;
+  --soft: #cbd5e1;
   --blue: #60a5fa;
   --purple: #7c3aed;
-  --card: rgba(255, 255, 255, 0.07);
-  --border: rgba(255, 255, 255, 0.14);
-  --high: #f87171;
-  --medium: #fbbf24;
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.12);
 }
 
 html {
@@ -22,13 +20,10 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background:
-    radial-gradient(circle at 5% 15%, rgba(59, 130, 246, 0.45), transparent 28%),
-    radial-gradient(circle at 85% 70%, rgba(124, 58, 237, 0.55), transparent 32%),
-    var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+  background: #050816;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 a {
@@ -36,38 +31,16 @@ a {
   text-decoration: none;
 }
 
-a:focus {
-  outline: 3px solid var(--blue);
-  outline-offset: 4px;
-}
-
-.skip-link {
-  position: absolute;
-  top: -80px;
-  left: 20px;
-  background: #ffffff;
-  color: #111827;
-  padding: 12px 18px;
-  border-radius: 10px;
-  z-index: 999;
-  font-weight: 800;
-}
-
-.skip-link:focus {
-  top: 20px;
-}
-
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(17, 24, 39, 0.95);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(16px);
-  z-index: 10;
+  z-index: 100;
+  background: #111827;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .nav {
-  max-width: 1280px;
+  max-width: 1260px;
   margin: auto;
   padding: 26px 28px;
   display: flex;
@@ -78,115 +51,117 @@ a:focus {
 .logo {
   font-size: 2rem;
   font-weight: 900;
-  letter-spacing: -0.04em;
+  color: #ffffff;
 }
 
 .logo span {
-  color: var(--blue);
+  color: #60a5fa;
 }
 
 .nav-links {
   display: flex;
-  gap: 28px;
-  font-size: 1rem;
-  font-weight: 700;
+  gap: 34px;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
-  color: var(--blue);
+  color: #60a5fa;
 }
 
 .hero {
-  max-width: 1280px;
-  margin: auto;
-  padding: 90px 28px 80px;
-  display: grid;
-  grid-template-columns: 0.95fr 1.25fr;
-  gap: 46px;
-  align-items: center;
   min-height: 86vh;
+  padding: 70px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+  background:
+    linear-gradient(120deg, #304fc7 0%, #090d1d 42%, #6d34d5 100%);
+}
+
+.hero-content {
+  max-width: 760px;
+  margin-left: auto;
 }
 
 .eyebrow {
+  color: #93c5fd;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--blue);
-  font-weight: 900;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
 }
 
 h1 {
-  font-size: clamp(3.4rem, 7vw, 6.4rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  margin: 12px 0 28px;
+  font-size: clamp(3.8rem, 7vw, 6.4rem);
+  line-height: 1.05;
+  margin: 12px 0 26px;
+  letter-spacing: -0.05em;
 }
 
 h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  margin: 12px 0 34px;
-  max-width: 900px;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.1;
+  margin: 12px 0 36px;
 }
 
 h3 {
-  font-size: 1.35rem;
-  margin-top: 18px;
+  font-size: 1.45rem;
+  margin-top: 16px;
 }
 
 .hero-text {
-  color: var(--muted);
-  font-size: 1.2rem;
-  max-width: 680px;
+  color: #e5e7eb;
+  font-size: 1.25rem;
+  max-width: 740px;
 }
 
 .hero-actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: 34px;
 }
 
 .btn {
   display: inline-block;
   padding: 14px 24px;
-  border-radius: 999px;
-  font-weight: 900;
-  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-weight: 800;
+  border: 1px solid rgba(255,255,255,0.18);
 }
 
 .btn.primary {
-  background: linear-gradient(90deg, #3b82f6, #7c3aed);
-  color: #ffffff;
+  background: #60a5fa;
+  color: #050816;
 }
 
 .btn.secondary {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
 }
 
 .hero-image-card {
   margin: 0;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 28px;
+  max-width: 760px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 20px;
   padding: 14px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
 }
 
 .hero-image-card img {
   width: 100%;
-  border-radius: 18px;
   display: block;
+  border-radius: 14px;
 }
 
 .hero-image-card figcaption {
-  color: var(--muted);
+  color: #dbeafe;
   font-size: 0.95rem;
-  padding: 12px 4px 2px;
-  font-weight: 700;
+  padding: 12px 4px 0;
 }
 
 .section {
@@ -198,72 +173,64 @@ h3 {
 .overview-grid,
 .process-grid {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-top: 34px;
-}
-
-.overview-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.process-grid {
-  grid-template-columns: repeat(4, 1fr);
+  margin-top: 35px;
 }
 
 .info-card,
 .process-step,
 .finding-detail,
 .outcome {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 26px;
-  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
 }
 
 .info-card,
 .process-step {
-  padding: 28px;
+  padding: 26px;
 }
 
 .info-card p,
 .process-step p,
 .finding-detail p,
 .outcome p {
-  color: var(--muted);
+  color: #dbeafe;
 }
 
 .process-step span {
   display: inline-flex;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #3b82f6, #7c3aed);
-  color: #fff;
+  background: #60a5fa;
+  color: #050816;
   font-weight: 900;
 }
 
 .finding-list {
   display: grid;
-  gap: 32px;
-  margin-top: 42px;
+  gap: 34px;
+  margin-top: 40px;
 }
 
 .finding-detail {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
 }
 
 .finding-detail img {
   width: 100%;
   height: 100%;
-  min-height: 380px;
+  min-height: 370px;
   object-fit: contain;
-  background: #0b1020;
-  border-right: 1px solid var(--border);
+  background: #020617;
+  border-right: 1px solid rgba(255,255,255,0.12);
 }
 
 .finding-content {
@@ -276,48 +243,59 @@ h3 {
   font-size: 0.78rem;
   font-weight: 900;
   border-radius: 999px;
-  padding: 7px 11px;
+  padding: 7px 12px;
   margin-right: 8px;
   margin-bottom: 18px;
 }
 
 .high .severity {
-  background: rgba(248, 113, 113, 0.15);
-  color: var(--high);
-  border: 1px solid rgba(248, 113, 113, 0.35);
+  background: rgba(248,113,113,0.18);
+  color: #fca5a5;
 }
 
 .medium .severity {
-  background: rgba(251, 191, 36, 0.15);
-  color: var(--medium);
-  border: 1px solid rgba(251, 191, 36, 0.35);
+  background: rgba(251,191,36,0.18);
+  color: #fde68a;
 }
 
 .wcag {
-  background: rgba(96, 165, 250, 0.15);
-  color: var(--blue);
-  border: 1px solid rgba(96, 165, 250, 0.35);
+  background: rgba(96,165,250,0.18);
+  color: #93c5fd;
 }
 
 .outcome {
   padding: 42px;
 }
 
-.outcome .btn {
-  margin-top: 22px;
-}
-
 .footer {
   text-align: center;
   padding: 36px 24px;
-  color: var(--soft);
-  border-top: 1px solid var(--border);
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 20px;
+  background: white;
+  color: black;
+  padding: 12px 18px;
+  z-index: 999;
+}
+
+.skip-link:focus {
+  top: 20px;
 }
 
 @media (max-width: 980px) {
   .hero,
   .finding-detail {
     grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    margin-left: 0;
   }
 
   .overview-grid,
@@ -327,7 +305,7 @@ h3 {
 
   .finding-detail img {
     border-right: 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
   }
 
   .nav {
@@ -347,21 +325,21 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  h1 {
+    font-size: 3.2rem;
+  }
+
   .hero,
   .section {
     padding-left: 18px;
     padding-right: 18px;
   }
 
-  h1 {
-    font-size: 3.2rem;
+  .finding-content {
+    padding: 24px;
   }
 
   .finding-detail img {
     min-height: 240px;
-  }
-
-  .finding-content {
-    padding: 24px;
   }
 }
